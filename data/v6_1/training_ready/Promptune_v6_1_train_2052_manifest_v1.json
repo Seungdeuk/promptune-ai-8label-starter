@@ -1,0 +1,65 @@
+{
+  "dataset_version": "V6.1 controlled augmentation v1",
+  "rows": 2052,
+  "parent_dataset": {
+    "file": "Promptune_v6_train_2000_training_v1.csv",
+    "rows": 2000,
+    "sha256": "135525A382616D4CBAB81E632175AB61FFA86BA74AD4A17622FFF9324452DEE7"
+  },
+  "augmentation": {
+    "approved_rows": 52,
+    "source_workbook": "Promptune_V6_1_Candidate_52_Approved_Audited_v1.xlsx",
+    "source_workbook_sha256": "D2A7B16089F627539CBE7F5D1F79A29F6C7065709D85B9F66EA6B0B42D6C6641",
+    "label_source": "GPT-5.6 Sol AI draft accepted by user as-is",
+    "target_labels_preserved_zero": "52/52"
+  },
+  "near_duplicate_audit": {
+    "candidate_internal": "PASS 52/52",
+    "train_2000": "PASS 52/52; exact normalized duplicates 0",
+    "valid_400": "PASS 52/52; exact normalized duplicates 0",
+    "method": "NFKC normalization + exact text + char_wb TF-IDF ngram(3,5) cosine + normalized SequenceMatcher; heuristic screening thresholds",
+    "final_benchmark_210": "NOT ACCESSED by policy"
+  },
+  "label_positive_counts": {
+    "parent_v6_train_2000": {
+      "missing_task": 99,
+      "missing_audience": 34,
+      "missing_context": 1044,
+      "missing_format": 40,
+      "missing_tone": 61,
+      "missing_length": 42,
+      "missing_constraint": 55,
+      "missing_example": 83
+    },
+    "augmentation_52": {
+      "missing_task": 0,
+      "missing_audience": 1,
+      "missing_context": 42,
+      "missing_format": 0,
+      "missing_tone": 0,
+      "missing_length": 12,
+      "missing_constraint": 16,
+      "missing_example": 0
+    },
+    "v6_1_train_2052": {
+      "missing_task": 99,
+      "missing_audience": 35,
+      "missing_context": 1086,
+      "missing_format": 40,
+      "missing_tone": 61,
+      "missing_length": 54,
+      "missing_constraint": 71,
+      "missing_example": 83
+    }
+  },
+  "output": {
+    "file": "Promptune_v6_1_train_2052_training_v1.csv",
+    "sha256": "1ACFA68284D27B8519182ECEA37A83D81CBBC3063FB04FC9CA8DF97DB5D7B77C"
+  },
+  "experiment_policy": {
+    "first_run_seed": 42,
+    "keep_model_loss_optimizer_epochs_batch_lr_max_length_same_as_v6": true,
+    "valid_400_role": "development set because its error patterns informed V6.1",
+    "final_benchmark_210": "evaluate exactly once only after final model/threshold freeze"
+  }
+}
