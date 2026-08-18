@@ -118,3 +118,6 @@ data/v6/Promptune_v6_valid_400_unlabeled_master_v1.csv
 data/final-holdout/*
 !data/final-holdout/final-benchmark-v1/
 !data/final-holdout/final-benchmark-v1/**
+# Generated V6 error-analysis outputs
+results/v6/error_analysis/
+results/v6/Promptune_V6_Error_Analysis_Result.zip
