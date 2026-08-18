@@ -1,0 +1,72 @@
+{
+  "dataset_name": "Promptune V6 Valid 400",
+  "freeze_version": "v1",
+  "source_file": "data\\v6\\labeling\\valid_human_review\\merged\\Promptune_v6_valid_400_human_final_candidate_v1.csv",
+  "frozen_file": "data\\v6\\labeling\\valid_human_review\\frozen\\Promptune_v6_valid_400_frozen_v1.csv",
+  "rows": 400,
+  "unique_ids": 400,
+  "sha256": "94bc3d4fd3cdc26ef7b90a0b167b5af4d372d4e72b266d049c4336386aceba70",
+  "label_semantics": {
+    "1": "supplementation needed for actual request execution",
+    "0": "sufficient or unnecessary for this request"
+  },
+  "review_provenance": "All 400 validation prompts were blind human-reviewed for all 8 labels before freeze.",
+  "known_data_quality_notes": {
+    "weak3_task": "14/14 designed Task contrast pairs survived final GT.",
+    "weak3_format": "0/13 designed Format contrast pairs survived final GT; treat as generation-design limitation, not forced GT correction.",
+    "weak3_constraint": "0/13 designed Constraint contrast pairs survived final GT; treat as generation-design limitation, not forced GT correction.",
+    "sparse_positive_labels": {
+      "audience": 7,
+      "format": 5,
+      "tone": 7,
+      "length": 3,
+      "constraint": 8,
+      "example": 10
+    },
+    "threshold_warning": "Per-label threshold tuning on very sparse positive labels may be statistically unstable. Do not alter GT to balance."
+  },
+  "distribution": {
+    "human_missing_task": {
+      "missing_1": 27,
+      "sufficient_0": 373,
+      "positive_rate": 0.0675
+    },
+    "human_missing_audience": {
+      "missing_1": 7,
+      "sufficient_0": 393,
+      "positive_rate": 0.0175
+    },
+    "human_missing_context": {
+      "missing_1": 212,
+      "sufficient_0": 188,
+      "positive_rate": 0.53
+    },
+    "human_missing_format": {
+      "missing_1": 5,
+      "sufficient_0": 395,
+      "positive_rate": 0.0125
+    },
+    "human_missing_tone": {
+      "missing_1": 7,
+      "sufficient_0": 393,
+      "positive_rate": 0.0175
+    },
+    "human_missing_length": {
+      "missing_1": 3,
+      "sufficient_0": 397,
+      "positive_rate": 0.0075
+    },
+    "human_missing_constraint": {
+      "missing_1": 8,
+      "sufficient_0": 392,
+      "positive_rate": 0.02
+    },
+    "human_missing_example": {
+      "missing_1": 10,
+      "sufficient_0": 390,
+      "positive_rate": 0.025
+    }
+  },
+  "freeze_note": "Do not edit this frozen CSV in place. Any correction must create a new version.",
+  "created_local_date": "2026-08-14 17:43:44"
+}

@@ -1,0 +1,420 @@
+{
+  "benchmark": {
+    "path": "data\\final-holdout\\final-benchmark-v1\\Promptune_final_benchmark_210_v1.csv",
+    "rows": 210,
+    "max_length": 256
+  },
+  "model": {
+    "path": "artifacts\\kcelectra-8label-v5-e3-seed52",
+    "threshold_path": "artifacts\\kcelectra-8label-v5-e3-seed52\\thresholds-v2.json"
+  },
+  "runtime": {
+    "device": "cuda",
+    "model_load_seconds": 2.5341440999982296,
+    "inference_seconds": 1.517025700002705,
+    "average_ms_per_sentence": 7.223931904774786,
+    "peak_gpu_memory_mb": 520.81591796875
+  },
+  "overall": {
+    "rows": 210,
+    "macro_precision": 0.125,
+    "macro_recall": 0.011363636363636364,
+    "macro_f1": 0.020833333333333332,
+    "micro_precision": 0.5,
+    "micro_recall": 0.006944444444444444,
+    "micro_f1": 0.0136986301369863,
+    "exact_match": 0.40476190476190477,
+    "labels": {
+      "task": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 20,
+        "tp": 0,
+        "fp": 0,
+        "fn": 20,
+        "tn": 190,
+        "threshold": 0.20000000298023224
+      },
+      "audience": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 12,
+        "tp": 0,
+        "fp": 0,
+        "fn": 12,
+        "tn": 198,
+        "threshold": 0.28999999165534973
+      },
+      "context": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 44,
+        "tp": 0,
+        "fp": 0,
+        "fn": 44,
+        "tn": 166,
+        "threshold": 0.44999998807907104
+      },
+      "format": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 23,
+        "tp": 0,
+        "fp": 0,
+        "fn": 23,
+        "tn": 187,
+        "threshold": 0.23000000417232513
+      },
+      "tone": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 14,
+        "tp": 0,
+        "fp": 0,
+        "fn": 14,
+        "tn": 196,
+        "threshold": 0.25999999046325684
+      },
+      "length": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 10,
+        "tp": 0,
+        "fp": 0,
+        "fn": 10,
+        "tn": 200,
+        "threshold": 0.3100000023841858
+      },
+      "constraint": {
+        "precision": 1.0,
+        "recall": 0.09090909090909091,
+        "f1": 0.16666666666666666,
+        "support": 11,
+        "tp": 1,
+        "fp": 0,
+        "fn": 10,
+        "tn": 199,
+        "threshold": 0.2199999988079071
+      },
+      "example": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 10,
+        "tp": 0,
+        "fp": 1,
+        "fn": 10,
+        "tn": 199,
+        "threshold": 0.20999999344348907
+      }
+    }
+  },
+  "splits": {
+    "main": {
+      "rows": 100,
+      "macro_precision": 0.125,
+      "macro_recall": 0.03125,
+      "macro_f1": 0.05,
+      "micro_precision": 0.5,
+      "micro_recall": 0.024390243902439025,
+      "micro_f1": 0.046511627906976744,
+      "exact_match": 0.62,
+      "labels": {
+        "task": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 10,
+          "tp": 0,
+          "fp": 0,
+          "fn": 10,
+          "tn": 90,
+          "threshold": 0.20000000298023224
+        },
+        "audience": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 100,
+          "threshold": 0.28999999165534973
+        },
+        "context": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 24,
+          "tp": 0,
+          "fp": 0,
+          "fn": 24,
+          "tn": 76,
+          "threshold": 0.44999998807907104
+        },
+        "format": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1,
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "tn": 99,
+          "threshold": 0.23000000417232513
+        },
+        "tone": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2,
+          "tp": 0,
+          "fp": 0,
+          "fn": 2,
+          "tn": 98,
+          "threshold": 0.25999999046325684
+        },
+        "length": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 100,
+          "threshold": 0.3100000023841858
+        },
+        "constraint": {
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4,
+          "support": 4,
+          "tp": 1,
+          "fp": 0,
+          "fn": 3,
+          "tn": 96,
+          "threshold": 0.2199999988079071
+        },
+        "example": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0,
+          "tp": 0,
+          "fp": 1,
+          "fn": 0,
+          "tn": 99,
+          "threshold": 0.20999999344348907
+        }
+      }
+    },
+    "rare_challenge_1": {
+      "rows": 70,
+      "macro_precision": 0.0,
+      "macro_recall": 0.0,
+      "macro_f1": 0.0,
+      "micro_precision": 0.0,
+      "micro_recall": 0.0,
+      "micro_f1": 0.0,
+      "exact_match": 0.21428571428571427,
+      "labels": {
+        "task": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 10,
+          "tp": 0,
+          "fp": 0,
+          "fn": 10,
+          "tn": 60,
+          "threshold": 0.20000000298023224
+        },
+        "audience": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 5,
+          "tp": 0,
+          "fp": 0,
+          "fn": 5,
+          "tn": 65,
+          "threshold": 0.28999999165534973
+        },
+        "context": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 14,
+          "tp": 0,
+          "fp": 0,
+          "fn": 14,
+          "tn": 56,
+          "threshold": 0.44999998807907104
+        },
+        "format": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2,
+          "tp": 0,
+          "fp": 0,
+          "fn": 2,
+          "tn": 68,
+          "threshold": 0.23000000417232513
+        },
+        "tone": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 10,
+          "tp": 0,
+          "fp": 0,
+          "fn": 10,
+          "tn": 60,
+          "threshold": 0.25999999046325684
+        },
+        "length": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 10,
+          "tp": 0,
+          "fp": 0,
+          "fn": 10,
+          "tn": 60,
+          "threshold": 0.3100000023841858
+        },
+        "constraint": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 7,
+          "tp": 0,
+          "fp": 0,
+          "fn": 7,
+          "tn": 63,
+          "threshold": 0.2199999988079071
+        },
+        "example": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 10,
+          "tp": 0,
+          "fp": 0,
+          "fn": 10,
+          "tn": 60,
+          "threshold": 0.20999999344348907
+        }
+      }
+    },
+    "rare_challenge_2": {
+      "rows": 40,
+      "macro_precision": 0.0,
+      "macro_recall": 0.0,
+      "macro_f1": 0.0,
+      "micro_precision": 0.0,
+      "micro_recall": 0.0,
+      "micro_f1": 0.0,
+      "exact_match": 0.2,
+      "labels": {
+        "task": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 40,
+          "threshold": 0.20000000298023224
+        },
+        "audience": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 7,
+          "tp": 0,
+          "fp": 0,
+          "fn": 7,
+          "tn": 33,
+          "threshold": 0.28999999165534973
+        },
+        "context": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 6,
+          "tp": 0,
+          "fp": 0,
+          "fn": 6,
+          "tn": 34,
+          "threshold": 0.44999998807907104
+        },
+        "format": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 20,
+          "tp": 0,
+          "fp": 0,
+          "fn": 20,
+          "tn": 20,
+          "threshold": 0.23000000417232513
+        },
+        "tone": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2,
+          "tp": 0,
+          "fp": 0,
+          "fn": 2,
+          "tn": 38,
+          "threshold": 0.25999999046325684
+        },
+        "length": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 40,
+          "threshold": 0.3100000023841858
+        },
+        "constraint": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 40,
+          "threshold": 0.2199999988079071
+        },
+        "example": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 40,
+          "threshold": 0.20999999344348907
+        }
+      }
+    }
+  }
+}

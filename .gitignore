@@ -1,0 +1,120 @@
+﻿# ==============================
+# Python virtual environments
+# ==============================
+.venv/
+venv/
+
+# ==============================
+# Python cache
+# ==============================
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+
+# ==============================
+# Environment / secrets
+# ==============================
+.env
+.env.*
+!.env.example
+
+# ==============================
+# ML artifacts / checkpoints
+# ==============================
+artifacts/*
+!artifacts/.gitkeep
+
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+*.onnx
+
+# ==============================
+# Logs / temporary files
+# ==============================
+logs/
+*.log
+*.tmp
+
+# ==============================
+# Private labeling data
+# ==============================
+**/*PRIVATE*
+**/*DO_NOT_SHARE*
+
+# ==============================
+# Local inspection files
+# ==============================
+folder_tree.txt
+largest_files.txt
+git_status.txt
+current_gitignore.txt
+path_dependency_check.txt
+
+# ==============================
+# IDE / OS
+# ==============================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ==============================
+# Historical experiment datasets
+# ==============================
+data/experiment-v2/
+data/experiment-v3/
+data/experiment-v4/
+data/synthetic-smoke/
+data/team-labeling/
+data/ground-truth-300/
+
+# ==============================
+# V5 historical/intermediate data
+# Keep only frozen-v5-v1
+# ==============================
+data/v5/*
+!data/v5/frozen-v5-v1/
+!data/v5/frozen-v5-v1/**
+
+# ==============================
+# V6 intermediate generation data
+# ==============================
+data/v6/generated_batches/
+data/v6/generation_batches/
+
+# V6 intermediate labeling/review data
+data/v6/labeling/*
+!data/v6/labeling/frozen/
+!data/v6/labeling/frozen/**
+!data/v6/labeling/valid_human_review/
+!data/v6/labeling/valid_human_review/frozen/
+!data/v6/labeling/valid_human_review/frozen/**
+
+# Inside valid_human_review, ignore everything except frozen
+data/v6/labeling/valid_human_review/*
+!data/v6/labeling/valid_human_review/frozen/
+
+# ==============================
+# V6 root intermediate reports
+# ==============================
+data/v6/Promptune_v6_generation_plan_2400.csv
+data/v6/Promptune_v6_train_2000_audit_v1.csv
+data/v6/Promptune_v6_train_2000_near_duplicates_v1.csv
+data/v6/Promptune_v6_train_2000_unlabeled_master_v1.csv
+data/v6/Promptune_v6_train_valid_leakage_v1.csv
+data/v6/Promptune_v6_train_vs_benchmark_leakage_v1.csv
+data/v6/Promptune_v6_valid_400_audit_v1.csv
+data/v6/Promptune_v6_valid_400_near_duplicates_v1.csv
+data/v6/Promptune_v6_valid_400_unlabeled_master_v1.csv
+
+# ==============================
+# Old holdout construction data
+# Keep only frozen benchmark
+# ==============================
+data/final-holdout/*
+!data/final-holdout/final-benchmark-v1/
+!data/final-holdout/final-benchmark-v1/**

@@ -1,0 +1,68 @@
+{
+  "dataset_name": "Promptune V6 Train 2000",
+  "freeze_version": "v1",
+  "source_file": "data\\v6\\labeling\\final_candidate\\Promptune_v6_train_2000_final_candidate_v2.csv",
+  "frozen_file": "data\\v6\\labeling\\frozen\\Promptune_v6_train_2000_frozen_v1.csv",
+  "rows": 2000,
+  "unique_ids": 2000,
+  "sha256": "e0d04c66b3b3f4b1cc6ee915427dd905f6eab44d742b716aacd1089c35de4f68",
+  "label_semantics": {
+    "1": "supplementation needed for actual request execution",
+    "0": "sufficient or unnecessary for this request"
+  },
+  "review_provenance": {
+    "context": "Human-reviewed for all 2000 rows using Human Calibration 160, independent Human Audit 125, and Full Human Review 1715.",
+    "task_audience_format": "Primary labels with Human Calibration 160 applied; remaining positive rows were separately Human-reviewed before freeze.",
+    "tone_length_constraint_example": "Primary labels retained after Human Calibration validation; not exhaustively human-reviewed across all 2000 rows."
+  },
+  "known_data_quality_notes": {
+    "weak3_task": "69/70 designed contrast pairs survived in final GT.",
+    "weak3_format": "0/70 designed contrast pairs survived in final GT. Treat as generation-design failure, not a reason to force labels.",
+    "weak3_constraint": "0/70 designed contrast pairs survived in final GT. Treat as generation-design failure, not a reason to force labels.",
+    "class_imbalance": "Audience, Format, Tone, Length, Constraint, and Example positives remain sparse. Do not alter GT to balance classes."
+  },
+  "distribution": {
+    "human_missing_task": {
+      "missing_1": 99,
+      "sufficient_0": 1901,
+      "positive_rate": 0.0495
+    },
+    "human_missing_audience": {
+      "missing_1": 34,
+      "sufficient_0": 1966,
+      "positive_rate": 0.017
+    },
+    "human_missing_context": {
+      "missing_1": 1044,
+      "sufficient_0": 956,
+      "positive_rate": 0.522
+    },
+    "human_missing_format": {
+      "missing_1": 40,
+      "sufficient_0": 1960,
+      "positive_rate": 0.02
+    },
+    "human_missing_tone": {
+      "missing_1": 61,
+      "sufficient_0": 1939,
+      "positive_rate": 0.0305
+    },
+    "human_missing_length": {
+      "missing_1": 42,
+      "sufficient_0": 1958,
+      "positive_rate": 0.021
+    },
+    "human_missing_constraint": {
+      "missing_1": 55,
+      "sufficient_0": 1945,
+      "positive_rate": 0.0275
+    },
+    "human_missing_example": {
+      "missing_1": 83,
+      "sufficient_0": 1917,
+      "positive_rate": 0.0415
+    }
+  },
+  "freeze_note": "Do not edit this frozen CSV in place. Any later augmentation or correction must produce a new dataset/version.",
+  "created_local_date": "2026-08-14 17:33:28"
+}
