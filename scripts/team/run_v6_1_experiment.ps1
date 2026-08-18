@@ -88,16 +88,33 @@ function Invoke-PythonStep {
 
     $StepStart = Get-Date
 
-    & python @Arguments 2>&1 |
-        Tee-Object -FilePath $LogPath -Append
+    # Windows PowerShell 5.1 can wrap native stderr as NativeCommandError.
+    # Hugging Face/Transformers normally writes progress information to stderr,
+    # so do not treat stderr itself as a training failure.
+    # Stream stdout/stderr to the console + run.log, then judge success only
+    # from the native process exit code.
+    $PreviousErrorActionPreference = $ErrorActionPreference
 
-    $ExitCode = $LASTEXITCODE
+    try {
+        $ErrorActionPreference = "Continue"
+
+        & python @Arguments 2>&1 |
+            Tee-Object -FilePath $LogPath -Append |
+            Out-Host
+
+        $ExitCode = $LASTEXITCODE
+    }
+    finally {
+        $ErrorActionPreference = $PreviousErrorActionPreference
+    }
 
     if ($ExitCode -ne 0) {
         throw "$Name failed with exit code $ExitCode"
     }
 
-    return ((Get-Date) - $StepStart).TotalSeconds
+    # Out-Host above prevents command logs from becoming part of this
+    # function's return value. Return only elapsed seconds.
+    return [double]((Get-Date) - $StepStart).TotalSeconds
 }
 
 Write-Section "Promptune V6.1 experiment preflight"
@@ -123,6 +140,9 @@ if ($LASTEXITCODE -ne 0) {
 
 $GitCommitShort = (& git rev-parse --short HEAD 2>&1 | Out-String).Trim()
 $GitBranch = (& git branch --show-current 2>&1 | Out-String).Trim()
+if ([string]::IsNullOrWhiteSpace($GitBranch)) {
+    $GitBranch = "DETACHED"
+}
 $GitStatusLines = @(& git status --short)
 
 Write-Host "Git branch  : $GitBranch"
@@ -144,8 +164,9 @@ if ($LASTEXITCODE -ne 0) {
     throw "Python is not available."
 }
 
-$EnvJson = & python -c @"
+$EnvJson = @'
 import json
+import sys
 import torch
 import numpy
 import pandas
@@ -154,7 +175,7 @@ import transformers
 import accelerate
 
 data = {
-    "python_runtime": __import__("sys").version.split()[0],
+    "python_runtime": sys.version.split()[0],
     "torch": torch.__version__,
     "torch_cuda": torch.version.cuda,
     "cuda_available": torch.cuda.is_available(),
@@ -167,7 +188,7 @@ data = {
     "accelerate": accelerate.__version__,
 }
 print(json.dumps(data, ensure_ascii=False))
-"@
+'@ | python -
 
 if ($LASTEXITCODE -ne 0) {
     throw "Unable to inspect Python/ML environment."
