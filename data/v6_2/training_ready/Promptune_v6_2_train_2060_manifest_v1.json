@@ -1,0 +1,97 @@
+{
+  "dataset": "Promptune V6.2 contrastive boundary training set",
+  "version": "v1",
+  "parent_dataset": "Promptune V6 Train2000",
+  "parent_rows": 2000,
+  "augmentation_rows": 60,
+  "total_rows": 2060,
+  "labels": [
+    "task",
+    "audience",
+    "context",
+    "format",
+    "tone",
+    "length",
+    "constraint",
+    "example"
+  ],
+  "selection": {
+    "tone": {
+      "pairs": 10,
+      "rows": 20,
+      "sources": {
+        "R1": 3,
+        "R2": 7
+      }
+    },
+    "length": {
+      "pairs": 10,
+      "rows": 20,
+      "sources": {
+        "R1": 10
+      }
+    },
+    "example": {
+      "pairs": 10,
+      "rows": 20,
+      "sources": {
+        "R2": 10
+      }
+    },
+    "policy": [
+      "Tone: preserve all 3 prior clean R1 Tone pairs; select 7 R2 pairs with all revised patterns represented, max 2/pattern, lowest near-dup risk.",
+      "Length: select 2 lowest-risk clean pairs from each of 5 R1 Length patterns.",
+      "Example: select 2 lowest-risk clean pairs from each of 5 revised R2 Example patterns."
+    ]
+  },
+  "positive_counts": {
+    "v6_train2000": {
+      "task": 99,
+      "audience": 34,
+      "context": 1044,
+      "format": 40,
+      "tone": 61,
+      "length": 42,
+      "constraint": 55,
+      "example": 83
+    },
+    "v6_2_added60": {
+      "task": 0,
+      "audience": 0,
+      "context": 0,
+      "format": 0,
+      "tone": 10,
+      "length": 10,
+      "constraint": 0,
+      "example": 10
+    },
+    "v6_2_train2060": {
+      "task": 99,
+      "audience": 34,
+      "context": 1044,
+      "format": 40,
+      "tone": 71,
+      "length": 52,
+      "constraint": 55,
+      "example": 93
+    }
+  },
+  "near_duplicate": {
+    "train": "PASS all 60",
+    "valid": "PASS all 60",
+    "internal": "PASS all 60; no HIGH/WATCH pairs",
+    "method": "NFKC lowercase normalization + char_wb TF-IDF 3-5 cosine + normalized SequenceMatcher",
+    "train_valid_thresholds": {
+      "high": "cos>=0.82 or seq>=0.90",
+      "watch": "cos>=0.70 or seq>=0.82"
+    },
+    "internal_thresholds": {
+      "high": "cos>=0.88 or seq>=0.92",
+      "watch": "cos>=0.76 or seq>=0.86"
+    },
+    "disclaimer": "Heuristic screening only; not proof of semantic non-overlap."
+  },
+  "valid_rows_used_for_neardup": 400,
+  "final_benchmark210_accessed": false,
+  "sha256": "2B76462D40B3B6B7C82F196FE511AF08C947B11364BCB3470E98E8C0CBB95849"
+}
