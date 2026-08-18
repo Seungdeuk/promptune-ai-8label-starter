@@ -1,21 +1,41 @@
-[Promptune V6 공식 실험 기준]
+## Promptune V6 공식 실험 기준
 
+공식 실험 버전:
 
+`v6-official-baseline`
 
-Git Commit: 7219e2f
+학습 시작 전 반드시 최신 저장소와 Tag를 받아주세요.
 
-
-
-학습 시작 전 반드시:
-
+````powershell
 git pull
+git fetch --tags
 
-git rev-parse --short HEAD
+공식 실험 버전 확인:
+
+git rev-parse --short v6-official-baseline
+
+공식 실험은 v6-official-baseline Tag가 가리키는 코드와 동일한 버전에서 실행합니다.
 
 
+공식 학습 조건
+Model: beomi/KcELECTRA-base
+Train: V6 Train 2000
+Valid: V6 Valid 400
+Epochs: 3
+Batch Size: 4
+Learning Rate: 2e-5
+Max Length: 256
+Seed: 42 / 52 / 62
+Primary Threshold Tuner: V1
+Threshold Search Range: 0.01 ~ 0.99
+Final Benchmark 210: 최종 모델 선정 후 1회만 사용
+실행
 
-결과가 7219e2f인지 확인해주세요.
+배정받은 Seed만 실행합니다.
 
+.\scripts\team\run_v6_experiment.ps1 -Seed 42 -PcId PC02
+
+Seed 번호와 PC 번호는 본인에게 배정된 값으로 변경합니다.
 # Promptune AI Service — 8-label clean starter
 
 This project intentionally excludes the previous 5-label experiment code, checkpoints, and datasets.
@@ -47,7 +67,7 @@ cd promptune-ai-8label-starter
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
-```
+````
 
 For the first API-only run, install only the lightweight service dependencies:
 
@@ -186,7 +206,6 @@ The pipeline always runs `validate_preservation()` after normalization. If prote
 7. Connect the real model to this API.
 8. Confirm the current HyperCLOVA X API contract and implement only the normalizer adapter.
 9. Then add recommendation generation and Ghost Text.
-
 
 ## Synthetic smoke test before team Ground Truth
 
