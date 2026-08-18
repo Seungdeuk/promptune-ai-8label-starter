@@ -29,7 +29,7 @@ def parse_args() -> argparse.Namespace:
 def load_thresholds(path: str) -> np.ndarray:
     if not path:
         return np.full(len(LABELS), 0.5, dtype=np.float32)
-    data = json.loads(Path(path).read_text(encoding="utf-8"))
+    data = json.loads(Path(path).read_text(encoding="utf-8-sig"))
     return np.array([float(data.get(label, 0.5)) for label in LABELS], dtype=np.float32)
 
 

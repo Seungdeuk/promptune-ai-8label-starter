@@ -40,7 +40,7 @@ def main() -> None:
     if not 0.0 <= args.min_precision <= 1.0:
         raise ValueError("--min-precision must be between 0 and 1")
 
-    grid = np.arange(0.20, 0.81, 0.01)
+    grid = np.arange(0.01, 1.00, 0.01)
 
     thresholds: dict[str, float] = {}
     report: dict[str, dict] = {}

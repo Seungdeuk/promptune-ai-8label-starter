@@ -26,7 +26,7 @@ def main() -> None:
         raise ValueError(f"expected matching [N, {len(LABELS)}] arrays")
 
     thresholds = {}
-    grid = np.arange(0.20, 0.81, 0.01)
+    grid = np.arange(0.01, 1.00, 0.01)
     for i, label in enumerate(LABELS):
         scores = [f1_score(y[:, i], probs[:, i] >= t, zero_division=0) for t in grid]
         thresholds[label] = round(float(grid[int(np.argmax(scores))]), 2)
