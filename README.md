@@ -12,7 +12,7 @@ git fetch --tags
 
 공식 실험 버전 확인:
 
-git rev-parse --short v6-official-baseline
+git rev-parse --short "v6-official-baseline^{}"
 
 공식 실험은 v6-official-baseline Tag가 가리키는 코드와 동일한 버전에서 실행합니다.
 
