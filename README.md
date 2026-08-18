@@ -1,3 +1,21 @@
+[Promptune V6 공식 실험 기준]
+
+
+
+Git Commit: 7219e2f
+
+
+
+학습 시작 전 반드시:
+
+git pull
+
+git rev-parse --short HEAD
+
+
+
+결과가 7219e2f인지 확인해주세요.
+
 # Promptune AI Service — 8-label clean starter
 
 This project intentionally excludes the previous 5-label experiment code, checkpoints, and datasets.
